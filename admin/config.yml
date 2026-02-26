@@ -1,0 +1,18 @@
+backend:
+  name: git-gateway
+  branch: main # যদি আপনার GitHub ব্রাঞ্চের নাম অন্য কিছু হয় তবে সেটা দিবেন
+
+media_folder: "images/uploads" # আপলোড করা ছবি এখানে জমা হবে
+public_folder: "/images/uploads"
+
+collections:
+  - name: "products"
+    label: "All Products"
+    folder: "data/products" # প্রোডাক্টের তথ্য এখানে সেভ হবে
+    create: true # নতুন প্রোডাক্ট অ্যাড করার বাটন দিবে
+    slug: "{{title}}"
+    fields:
+      - {label: "Product Name", name: "title", widget: "string"}
+      - {label: "Price ($)", name: "price", widget: "number", value_type: "float"}
+      - {label: "Product Image", name: "image", widget: "image"}
+      - {label: "Description", name: "body", widget: "markdown"}
